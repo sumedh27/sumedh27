@@ -1036,8 +1036,8 @@ module.exports = HandleMsg = async (aruga, message) => {
                 aruga.reply(from, 'Something went wrong!', id)
             })
             break
-        case 'stalk':
-            if (args.length == 0) return aruga.reply(from, `To stalk someone's Instagram account\nType ${prefix}stalkig [username]\Example: ${prefix}stalk justsul`, id)
+        case 'stalkig':
+            if (args.length == 0) return aruga.reply(from, `To stalk someone's Instagram account\nType ${prefix}stalkig [username]\Example: ${prefix}stalkig justsul`, id)
             const igstalk = await rugaapi.stalkig(args[0])
             const igstalkpict = await rugaapi.stalkigpict(args[0])
             await aruga.sendFileFromUrl(from, igstalkpict, '', igstalk, id)
